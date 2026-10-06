@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jam Club</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER FIXE
+       ========================================== -->
+  <header class="header">
+    <!-- 1. Menu Burger à gauche -->
+    <div class="header-left">
+      <button class="burger-btn" aria-label="Menu">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </div>
+
+    <!-- 2. Logo au milieu -->
+    <div class="header-center">
+      <a href="#" class="logo">
+         <img src="images/logojamclub35.PNG" alt="Jam Club 35" class="header-logo-img">
+      </a>
+    </div>
+
+    <!-- 3. Réseaux sociaux à droite -->
+    <div class="header-right">
+      <a href="https://www.facebook.com/profile.php?id=61581783071436&locale=fr_FR" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffffff" class="social-icon">
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 6.016 4.432 10.984 10.125 11.854v-8.385H7.078v-3.47h3.047V9.356c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.568 22.984 24 18.016 24 12 24 5.373 18.627 0 12 0z"/>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/jamclub35" target="_blank" class="social-link" aria-label="Instagram">
+         <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+         </svg>
+      </a>
+      <a href="https://www.youtube.com/@JamClub35" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#ffffff" class="social-icon">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       MENU PLEIN ÉCRAN (OVERLAY)
+       ========================================== -->
+  <nav class="fullscreen-menu">
+    <ul>
+      <li><a href="#histoire">NOTRE HISTOIRE</a></li>
+      <li><a href="#dates">NOS DATES</a></li>
+      <li><a href="#contact">NOUS CONTACTER</a></li>
+    </ul>
+  </nav>
+
+  <!-- ==========================================
+       SECTION HERO BANNIÈRE
+       ========================================== -->
+  <section class="hero-wrapper">
+    <div class="hero-frame">
+      <video class="hero-video" autoplay loop muted playsinline>
+        <source src="videos/jamclub35banner.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo.
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">JAM CLUB</h1>
+        <p class="hero-baseline">SCÈNE OUVERTE À TOUTES ET TOUS</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION NOTRE HISTOIRE
+       ========================================== -->
+  <section id="histoire" class="story-section">
+    <div class="story-container">
+      <h2 class="story-title">NOTRE HISTOIRE</h2>
+      <div class="title-divider"></div>
+      <p class="story-text">
+        Né de la passion de rassembler les musiciens de tous horizons, le JAM CLUB 35 est le rendez-vous incontournable de la scène locale malouine. Un espace d'expression libre, brut et authentique où les genres se mélangent et où la musique prend vie en direct.
+      </p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION NOS DATES (DYNAMIQUE)
+       ========================================== -->
+  <section id="dates" class="event-section">
+    <div class="event-container">
+      <h2 class="section-title">NOS DATES</h2>
+      <div class="title-divider"></div>
+
+      <!-- Les cartes chargées dynamiquement s'afficheront ici -->
+      <div id="dates-container" class="events-list">
+        <p class="loading-msg">CHARGEMENT DES DATES EN COURS...</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+  <div class="contact-container">
+    <h2 class="section-title">NOUS CONTACTER NOUS REJOINDRE</h2>
+    <div class="title-divider"></div>
+
+    <form id="whatsapp-form" class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="prenom">PRÉNOM *</label>
+          <input type="text" id="prenom" required placeholder="Jimi">
+        </div>
+        <div class="form-group">
+          <label for="nom">NOM *</label>
+          <input type="text" id="nom" required placeholder="Hendrix">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="titre">TITRE DU MESSAGE</label>
+        <input type="text" id="titre" placeholder="Rejoindre le club / Question jam...">
+      </div>
+
+      <div class="form-group">
+        <label for="message">MESSAGE *</label>
+        <textarea id="message" rows="5" required placeholder="Ton message ici..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        <span>ENVOYER SUR WHATSAPP</span>
+        <svg class="whatsapp-icon" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.842-1.001z"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <!-- Image de fond en HTML -->
+  <img src="images/jamclub35_footer.webp" alt="JamClub35" class="footer-bg-img">
+  
+  <!-- Overlay noir -->
+  <div class="footer-overlay"></div>
+
+  <div class="footer-container">
+    <div class="footer-baseline">
+      <p class="rule-text">LA PREMIÈRE RÈGLE DU JAM CLUB, C'EST QU'ON PARLE DU JAMCLUB.</p>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <div class="footer-brand">
+        <span class="brand-name">JAMCLUB35</span>
+        <span class="brand-sub">SAINT-MALO</span>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">INSTAGRAM</a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">FACEBOOK</a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">YOUTUBE</a>
+      </div>
+
+      <div class="footer-copyright">
+        <p>&copy; 2026 JAMCLUB35. TOUS DROITS RÉSERVÉS.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
