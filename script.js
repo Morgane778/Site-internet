@@ -38,38 +38,40 @@ function initBurgerMenu() {
 }
 
 /* ==========================================
-   FONCTION UTILE : FORMATAGE EN YYYY-MM-DD
+   FONCTION UTILE : FORMATAGE DE DATE
    ========================================== */
 function formaterDateYYYYMMDD(rawDateStr) {
   if (!rawDateStr) return '';
 
   let str = rawDateStr.trim();
 
-  // Si c'est un format ISO ou Date JS (ex: 2026-07-23T...)
+  // Si Google renvoie une date au format ISO (ex: 2026-10-22T22:00:00.000Z)
   if (str.includes('T')) {
-    str = str.split('T')[0];
-  }
-
-  // Si c'est sous forme JJ.MM.AAAA ou JJ/MM/AAAA
-  let parts = [];
-  if (str.includes('.')) {
-    parts = str.split('.');
-  } else if (str.includes('/')) {
-    parts = str.split('/');
-  } else if (str.includes('-')) {
-    parts = str.split('-');
-    // Si déjà au format AAAA-MM-JJ
-    if (parts[0].length === 4) {
-      return `${parts[0]}-${parts[1].padStart(2, '0')}-${parts[2].padStart(2, '0')}`;
+    const d = new Date(str);
+    if (!isNaN(d.getTime())) {
+      const year = d.getFullYear();
+      const month = String(d.getMonth() + 1).padStart(2, '0');
+      const day = String(d.getDate()).padStart(2, '0');
+      return `${day}/${month}/${year}`;
     }
   }
 
-  // Convertit JJ, MM, AAAA -> AAAA-MM-JJ
+  // Si c'est sous forme JJ.MM.AAAA, JJ/MM/AAAA ou AAAA-MM-JJ
+  let parts = [];
+  if (str.includes('.')) parts = str.split('.');
+  else if (str.includes('/')) parts = str.split('/');
+  else if (str.includes('-')) {
+    parts = str.split('-');
+    if (parts[0].length === 4) {
+      return `${parts[2].padStart(2, '0')}/${parts[1].padStart(2, '0')}/${parts[0]}`;
+    }
+  }
+
   if (parts.length === 3) {
     const day = parts[0].padStart(2, '0');
     const month = parts[1].padStart(2, '0');
     const year = parts[2];
-    return `${year}-${month}-${day}`;
+    return `${day}/${month}/${year}`;
   }
 
   return str;
@@ -136,7 +138,9 @@ async function chargerEvenements() {
   }
 }
 
-// Remplace par le numéro WhatsApp officiel du groupe (format international sans le +)
+/* ==========================================
+   FORMULAIRE WHATSAPP
+   ========================================== */
 const WHATSAPP_PHONE = "33759593071"; 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -158,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const whatsappUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
       
-      // Ouvre WhatsApp dans un nouvel onglet
       window.open(whatsappUrl, '_blank');
     });
   }
